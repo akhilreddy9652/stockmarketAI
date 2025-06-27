@@ -1,0 +1,929 @@
+{
+  "timestamp": "2025-06-26 14:56:57.493903",
+  "analysis_type": "COMPREHENSIVE",
+  "stocks_analyzed": 50,
+  "sectors_covered": 7,
+  "top_10_stocks": [
+    "BHARTIARTL.NS",
+    "TECHM.NS",
+    "KOTAKBANK.NS",
+    "SBILIFE.NS",
+    "HDFCLIFE.NS",
+    "ICICIBANK.NS",
+    "BAJAJFINSV.NS",
+    "HDFCBANK.NS",
+    "DIVISLAB.NS",
+    "BAJFINANCE.NS"
+  ],
+  "sector_performance": {
+    "Banking & Financial": {
+      "stock_count": 4,
+      "avg_return_1m": 1.8597692428050343,
+      "avg_return_3m": 5.133222628217676,
+      "avg_volatility": 0.20802972779124906,
+      "avg_sharpe": 0.7165375950333401,
+      "best_performer": "KOTAKBANK.NS",
+      "worst_performer": "ICICIBANK.NS",
+      "stocks": [
+        "HDFCBANK.NS",
+        "ICICIBANK.NS",
+        "SBIN.NS",
+        "KOTAKBANK.NS"
+      ]
+    },
+    "Information Technology": {
+      "stock_count": 4,
+      "avg_return_1m": 4.010561474941446,
+      "avg_return_3m": 1.7165698292057272,
+      "avg_volatility": 0.25969735895740476,
+      "avg_sharpe": 0.3730284336913367,
+      "best_performer": "WIPRO.NS",
+      "worst_performer": "TCS.NS",
+      "stocks": [
+        "TCS.NS",
+        "INFY.NS",
+        "WIPRO.NS",
+        "HCLTECH.NS"
+      ]
+    },
+    "Pharmaceuticals": {
+      "stock_count": 4,
+      "avg_return_1m": 2.5598188058553575,
+      "avg_return_3m": 3.7264110390594296,
+      "avg_volatility": 0.23267181946897292,
+      "avg_sharpe": 0.7331353131834182,
+      "best_performer": "DRREDDY.NS",
+      "worst_performer": "DIVISLAB.NS",
+      "stocks": [
+        "SUNPHARMA.NS",
+        "DRREDDY.NS",
+        "CIPLA.NS",
+        "DIVISLAB.NS"
+      ]
+    },
+    "FMCG & Consumer": {
+      "stock_count": 4,
+      "avg_return_1m": 0.06546877907154536,
+      "avg_return_3m": 7.617485262740698,
+      "avg_volatility": 0.19238182585900032,
+      "avg_sharpe": 0.06258723816720997,
+      "best_performer": "BRITANNIA.NS",
+      "worst_performer": "HINDUNILVR.NS",
+      "stocks": [
+        "HINDUNILVR.NS",
+        "ITC.NS",
+        "NESTLEIND.NS",
+        "BRITANNIA.NS"
+      ]
+    },
+    "Automotive": {
+      "stock_count": 4,
+      "avg_return_1m": 0.39204187584114525,
+      "avg_return_3m": 5.957354081855523,
+      "avg_volatility": 0.2620345051300428,
+      "avg_sharpe": -0.11099021806847878,
+      "best_performer": "EICHERMOT.NS",
+      "worst_performer": "TATAMOTORS.NS",
+      "stocks": [
+        "TATAMOTORS.NS",
+        "MARUTI.NS",
+        "EICHERMOT.NS",
+        "HEROMOTOCO.NS"
+      ]
+    },
+    "Energy & Utilities": {
+      "stock_count": 4,
+      "avg_return_1m": 0.14778992477919584,
+      "avg_return_3m": 0.39555501932154724,
+      "avg_volatility": 0.2574789245728215,
+      "avg_sharpe": -0.10993482250005523,
+      "best_performer": "RELIANCE.NS",
+      "worst_performer": "NTPC.NS",
+      "stocks": [
+        "RELIANCE.NS",
+        "ONGC.NS",
+        "NTPC.NS",
+        "POWERGRID.NS"
+      ]
+    },
+    "Metals & Mining": {
+      "stock_count": 4,
+      "avg_return_1m": 1.3889922611804328,
+      "avg_return_3m": -2.876344364929875,
+      "avg_volatility": 0.2941428910130628,
+      "avg_sharpe": 0.26208247709233334,
+      "best_performer": "HINDALCO.NS",
+      "worst_performer": "TATASTEEL.NS",
+      "stocks": [
+        "TATASTEEL.NS",
+        "JSWSTEEL.NS",
+        "HINDALCO.NS",
+        "VEDL.NS"
+      ]
+    }
+  },
+  "stock_rankings": {
+    "BHARTIARTL.NS": {
+      "composite_score": 53.84413581976097,
+      "momentum_score": 8.45954751815404,
+      "risk_score": 77.94231325512399,
+      "sharpe_score": 100,
+      "current_price": 1965.5999755859375,
+      "returns_1m": 5.8994667011637025,
+      "volatility": 0.2205768674487601,
+      "sharpe_ratio": 1.5072875829035872
+    },
+    "TECHM.NS": {
+      "composite_score": 52.386096321643606,
+      "momentum_score": 7.98562991852333,
+      "risk_score": 73.56460090828588,
+      "sharpe_score": 97.9426141534317,
+      "current_price": 1705.0,
+      "returns_1m": 7.8909034562358205,
+      "volatility": 0.2643539909171411,
+      "sharpe_ratio": 0.958852283068634
+    },
+    "KOTAKBANK.NS": {
+      "composite_score": 50.91898297743374,
+      "momentum_score": 3.5599665098172872,
+      "risk_score": 77.28362077816111,
+      "sharpe_score": 100,
+      "current_price": 2198.300048828125,
+      "returns_1m": 5.977920121539482,
+      "volatility": 0.22716379221838895,
+      "sharpe_ratio": 1.0161717688937824
+    },
+    "SBILIFE.NS": {
+      "composite_score": 50.91893259663579,
+      "momentum_score": 6.7047977603053255,
+      "risk_score": 75.41080056596088,
+      "sharpe_score": 100,
+      "current_price": 1842.699951171875,
+      "returns_1m": 1.9530776961927065,
+      "volatility": 0.24589199434039113,
+      "sharpe_ratio": 1.1182628964096328
+    },
+    "HDFCLIFE.NS": {
+      "composite_score": 50.536583772850776,
+      "momentum_score": 5.143470498074317,
+      "risk_score": 75.91275029799223,
+      "sharpe_score": 100,
+      "current_price": 785.0999755859375,
+      "returns_1m": -0.27613644045878516,
+      "volatility": 0.24087249702007774,
+      "sharpe_ratio": 1.3433861552634918
+    },
+    "ICICIBANK.NS": {
+      "composite_score": 49.84828156342239,
+      "momentum_score": 0.778725957916917,
+      "risk_score": 81.37047348244944,
+      "sharpe_score": 99.93804779898655,
+      "current_price": 1425.800048828125,
+      "returns_1m": -1.925987003685281,
+      "volatility": 0.1862952651755056,
+      "sharpe_ratio": 0.9987609559797307
+    },
+    "BAJAJFINSV.NS": {
+      "composite_score": 49.812665070977594,
+      "momentum_score": 1.7810077111627765,
+      "risk_score": 74.20116781212157,
+      "sharpe_score": 100,
+      "current_price": 2011.800048828125,
+      "returns_1m": -0.5241285333255741,
+      "volatility": 0.2579883218787843,
+      "sharpe_ratio": 1.029726580260665
+    },
+    "HDFCBANK.NS": {
+      "composite_score": 49.54164047261872,
+      "momentum_score": 4.969123274668325,
+      "risk_score": 80.74734144973935,
+      "sharpe_score": 94.84582475251025,
+      "current_price": 1980.199951171875,
+      "returns_1m": 2.94774895616714,
+      "volatility": 0.1925265855026065,
+      "sharpe_ratio": 0.8969164950502051
+    },
+    "DIVISLAB.NS": {
+      "composite_score": 49.16649521515479,
+      "momentum_score": 3.3542220888358893,
+      "risk_score": 71.51634306485249,
+      "sharpe_score": 100,
+      "current_price": 6586.5,
+      "returns_1m": -0.7459312839059651,
+      "volatility": 0.28483656935147517,
+      "sharpe_ratio": 1.4869040510620986
+    },
+    "BAJFINANCE.NS": {
+      "composite_score": 49.127576474375545,
+      "momentum_score": 1.2247407584556824,
+      "risk_score": 74.35751509273766,
+      "sharpe_score": 100,
+      "current_price": 928.0,
+      "returns_1m": 0.6158774717040849,
+      "volatility": 0.2564248490726235,
+      "sharpe_ratio": 1.1805728279296512
+    },
+    "HCLTECH.NS": {
+      "composite_score": 48.95796898843835,
+      "momentum_score": 3.7093095953671047,
+      "risk_score": 73.61818032368632,
+      "sharpe_score": 95.58097644914163,
+      "current_price": 1717.0999755859375,
+      "returns_1m": 3.6082739996355473,
+      "volatility": 0.2638181967631368,
+      "sharpe_ratio": 0.9116195289828326
+    },
+    "EICHERMOT.NS": {
+      "composite_score": 48.778441273974636,
+      "momentum_score": 4.033197848973959,
+      "risk_score": 74.21735573794133,
+      "sharpe_score": 90.58025581266588,
+      "current_price": 5576.0,
+      "returns_1m": 4.684126537125688,
+      "volatility": 0.2578264426205866,
+      "sharpe_ratio": 0.8116051162533179
+    },
+    "APOLLOHOSP.NS": {
+      "composite_score": 48.29546105449618,
+      "momentum_score": 2.576275281412137,
+      "risk_score": 78.53692680474234,
+      "sharpe_score": 88.62073421536019,
+      "current_price": 7042.0,
+      "returns_1m": 1.2290663408323077,
+      "volatility": 0.21463073195257656,
+      "sharpe_ratio": 0.7724146843072036
+    },
+    "GRASIM.NS": {
+      "composite_score": 47.686351000162816,
+      "momentum_score": 9.549179070598072,
+      "risk_score": 76.17753018000862,
+      "sharpe_score": 78.91183994670385,
+      "current_price": 2831.800048828125,
+      "returns_1m": 9.861884758734018,
+      "volatility": 0.23822469819991382,
+      "sharpe_ratio": 0.5782367989340772
+    },
+    "TITAN.NS": {
+      "composite_score": 46.61256242912442,
+      "momentum_score": 8.6223383370532,
+      "risk_score": 76.97240013695264,
+      "sharpe_score": 73.99184774557351,
+      "current_price": 3652.199951171875,
+      "returns_1m": 2.1680141286989363,
+      "volatility": 0.23027599863047363,
+      "sharpe_ratio": 0.47983695491147027
+    },
+    "M&M.NS": {
+      "composite_score": 45.76090174082284,
+      "momentum_score": 9.748730694264722,
+      "risk_score": 69.32447483948644,
+      "sharpe_score": 78.77343248153896,
+      "current_price": 3215.5,
+      "returns_1m": 7.261990380478389,
+      "volatility": 0.30675525160513567,
+      "sharpe_ratio": 0.5754686496307793
+    },
+    "DRREDDY.NS": {
+      "composite_score": 45.7210157029766,
+      "momentum_score": 6.960080983806711,
+      "risk_score": 79.02489995838044,
+      "sharpe_score": 79.43582957409916,
+      "current_price": 1341.5999755859375,
+      "returns_1m": 7.9671657770086,
+      "volatility": 0.20975100041619552,
+      "sharpe_ratio": 0.5887165914819833
+    },
+    "SUNPHARMA.NS": {
+      "composite_score": 44.93359668018187,
+      "momentum_score": -1.506856495907154,
+      "risk_score": 79.77692723921686,
+      "sharpe_score": 80.74554279832607,
+      "current_price": 1669.5999755859375,
+      "returns_1m": 0.19202779194631425,
+      "volatility": 0.20223072760783142,
+      "sharpe_ratio": 0.6149108559665212
+    },
+    "BRITANNIA.NS": {
+      "composite_score": 44.041215621621575,
+      "momentum_score": 8.16749763970564,
+      "risk_score": 79.61093099836324,
+      "sharpe_score": 71.17207857507101,
+      "current_price": 5708.0,
+      "returns_1m": 4.293805956513785,
+      "volatility": 0.20389069001636756,
+      "sharpe_ratio": 0.4234415715014203
+    },
+    "JSWSTEEL.NS": {
+      "composite_score": 43.95843404201592,
+      "momentum_score": 0.6383072875266682,
+      "risk_score": 73.70298883195133,
+      "sharpe_score": 79.01748855789654,
+      "current_price": 1024.449951171875,
+      "returns_1m": 2.342652464722783,
+      "volatility": 0.2629701116804868,
+      "sharpe_ratio": 0.5803497711579308
+    }
+  },
+  "optimized_portfolios": {
+    "conservative": {
+      "stocks": [
+        {
+          "symbol": "BHARTIARTL.NS",
+          "weight": 0.05,
+          "current_price": 1965.5999755859375,
+          "expected_return": 5.8994667011637025,
+          "risk": 0.2205768674487601
+        },
+        {
+          "symbol": "TECHM.NS",
+          "weight": 0.05,
+          "current_price": 1705.0,
+          "expected_return": 7.8909034562358205,
+          "risk": 0.2643539909171411
+        },
+        {
+          "symbol": "KOTAKBANK.NS",
+          "weight": 0.05,
+          "current_price": 2198.300048828125,
+          "expected_return": 5.977920121539482,
+          "risk": 0.22716379221838895
+        },
+        {
+          "symbol": "SBILIFE.NS",
+          "weight": 0.05,
+          "current_price": 1842.699951171875,
+          "expected_return": 1.9530776961927065,
+          "risk": 0.24589199434039113
+        },
+        {
+          "symbol": "HDFCLIFE.NS",
+          "weight": 0.05,
+          "current_price": 785.0999755859375,
+          "expected_return": -0.27613644045878516,
+          "risk": 0.24087249702007774
+        },
+        {
+          "symbol": "ICICIBANK.NS",
+          "weight": 0.05,
+          "current_price": 1425.800048828125,
+          "expected_return": -1.925987003685281,
+          "risk": 0.1862952651755056
+        },
+        {
+          "symbol": "BAJAJFINSV.NS",
+          "weight": 0.05,
+          "current_price": 2011.800048828125,
+          "expected_return": -0.5241285333255741,
+          "risk": 0.2579883218787843
+        },
+        {
+          "symbol": "HDFCBANK.NS",
+          "weight": 0.05,
+          "current_price": 1980.199951171875,
+          "expected_return": 2.94774895616714,
+          "risk": 0.1925265855026065
+        },
+        {
+          "symbol": "DIVISLAB.NS",
+          "weight": 0.05,
+          "current_price": 6586.5,
+          "expected_return": -0.7459312839059651,
+          "risk": 0.28483656935147517
+        },
+        {
+          "symbol": "BAJFINANCE.NS",
+          "weight": 0.05,
+          "current_price": 928.0,
+          "expected_return": 0.6158774717040849,
+          "risk": 0.2564248490726235
+        },
+        {
+          "symbol": "HCLTECH.NS",
+          "weight": 0.05,
+          "current_price": 1717.0999755859375,
+          "expected_return": 3.6082739996355473,
+          "risk": 0.2638181967631368
+        },
+        {
+          "symbol": "EICHERMOT.NS",
+          "weight": 0.05,
+          "current_price": 5576.0,
+          "expected_return": 4.684126537125688,
+          "risk": 0.2578264426205866
+        },
+        {
+          "symbol": "APOLLOHOSP.NS",
+          "weight": 0.05,
+          "current_price": 7042.0,
+          "expected_return": 1.2290663408323077,
+          "risk": 0.21463073195257656
+        },
+        {
+          "symbol": "GRASIM.NS",
+          "weight": 0.05,
+          "current_price": 2831.800048828125,
+          "expected_return": 9.861884758734018,
+          "risk": 0.23822469819991382
+        },
+        {
+          "symbol": "TITAN.NS",
+          "weight": 0.05,
+          "current_price": 3652.199951171875,
+          "expected_return": 2.1680141286989363,
+          "risk": 0.23027599863047363
+        },
+        {
+          "symbol": "DRREDDY.NS",
+          "weight": 0.05,
+          "current_price": 1341.5999755859375,
+          "expected_return": 7.9671657770086,
+          "risk": 0.20975100041619552
+        },
+        {
+          "symbol": "SUNPHARMA.NS",
+          "weight": 0.05,
+          "current_price": 1669.5999755859375,
+          "expected_return": 0.19202779194631425,
+          "risk": 0.20223072760783142
+        },
+        {
+          "symbol": "BRITANNIA.NS",
+          "weight": 0.05,
+          "current_price": 5708.0,
+          "expected_return": 4.293805956513785,
+          "risk": 0.20389069001636756
+        },
+        {
+          "symbol": "JSWSTEEL.NS",
+          "weight": 0.05,
+          "current_price": 1024.449951171875,
+          "expected_return": 2.342652464722783,
+          "risk": 0.2629701116804868
+        },
+        {
+          "symbol": "BPCL.NS",
+          "weight": 0.05,
+          "current_price": 319.6000061035156,
+          "expected_return": -0.6527839676189306,
+          "risk": 0.2875393913326201
+        }
+      ],
+      "stock_count": 20,
+      "expected_return": 2.875352246461319,
+      "risk": 0.23740443610729717,
+      "sharpe_estimate": 12.111619705209622,
+      "risk_profile": "conservative"
+    },
+    "moderate": {
+      "stocks": [
+        {
+          "symbol": "BHARTIARTL.NS",
+          "weight": 0.04,
+          "current_price": 1965.5999755859375,
+          "expected_return": 5.8994667011637025,
+          "risk": 0.2205768674487601
+        },
+        {
+          "symbol": "TECHM.NS",
+          "weight": 0.04,
+          "current_price": 1705.0,
+          "expected_return": 7.8909034562358205,
+          "risk": 0.2643539909171411
+        },
+        {
+          "symbol": "KOTAKBANK.NS",
+          "weight": 0.04,
+          "current_price": 2198.300048828125,
+          "expected_return": 5.977920121539482,
+          "risk": 0.22716379221838895
+        },
+        {
+          "symbol": "SBILIFE.NS",
+          "weight": 0.04,
+          "current_price": 1842.699951171875,
+          "expected_return": 1.9530776961927065,
+          "risk": 0.24589199434039113
+        },
+        {
+          "symbol": "HDFCLIFE.NS",
+          "weight": 0.04,
+          "current_price": 785.0999755859375,
+          "expected_return": -0.27613644045878516,
+          "risk": 0.24087249702007774
+        },
+        {
+          "symbol": "BAJAJFINSV.NS",
+          "weight": 0.04,
+          "current_price": 2011.800048828125,
+          "expected_return": -0.5241285333255741,
+          "risk": 0.2579883218787843
+        },
+        {
+          "symbol": "DIVISLAB.NS",
+          "weight": 0.04,
+          "current_price": 6586.5,
+          "expected_return": -0.7459312839059651,
+          "risk": 0.28483656935147517
+        },
+        {
+          "symbol": "BAJFINANCE.NS",
+          "weight": 0.04,
+          "current_price": 928.0,
+          "expected_return": 0.6158774717040849,
+          "risk": 0.2564248490726235
+        },
+        {
+          "symbol": "HCLTECH.NS",
+          "weight": 0.04,
+          "current_price": 1717.0999755859375,
+          "expected_return": 3.6082739996355473,
+          "risk": 0.2638181967631368
+        },
+        {
+          "symbol": "EICHERMOT.NS",
+          "weight": 0.04,
+          "current_price": 5576.0,
+          "expected_return": 4.684126537125688,
+          "risk": 0.2578264426205866
+        },
+        {
+          "symbol": "APOLLOHOSP.NS",
+          "weight": 0.04,
+          "current_price": 7042.0,
+          "expected_return": 1.2290663408323077,
+          "risk": 0.21463073195257656
+        },
+        {
+          "symbol": "GRASIM.NS",
+          "weight": 0.04,
+          "current_price": 2831.800048828125,
+          "expected_return": 9.861884758734018,
+          "risk": 0.23822469819991382
+        },
+        {
+          "symbol": "TITAN.NS",
+          "weight": 0.04,
+          "current_price": 3652.199951171875,
+          "expected_return": 2.1680141286989363,
+          "risk": 0.23027599863047363
+        },
+        {
+          "symbol": "M&M.NS",
+          "weight": 0.04,
+          "current_price": 3215.5,
+          "expected_return": 7.261990380478389,
+          "risk": 0.30675525160513567
+        },
+        {
+          "symbol": "DRREDDY.NS",
+          "weight": 0.04,
+          "current_price": 1341.5999755859375,
+          "expected_return": 7.9671657770086,
+          "risk": 0.20975100041619552
+        },
+        {
+          "symbol": "SUNPHARMA.NS",
+          "weight": 0.04,
+          "current_price": 1669.5999755859375,
+          "expected_return": 0.19202779194631425,
+          "risk": 0.20223072760783142
+        },
+        {
+          "symbol": "BRITANNIA.NS",
+          "weight": 0.04,
+          "current_price": 5708.0,
+          "expected_return": 4.293805956513785,
+          "risk": 0.20389069001636756
+        },
+        {
+          "symbol": "JSWSTEEL.NS",
+          "weight": 0.04,
+          "current_price": 1024.449951171875,
+          "expected_return": 2.342652464722783,
+          "risk": 0.2629701116804868
+        },
+        {
+          "symbol": "BPCL.NS",
+          "weight": 0.04,
+          "current_price": 319.6000061035156,
+          "expected_return": -0.6527839676189306,
+          "risk": 0.2875393913326201
+        },
+        {
+          "symbol": "SHREECEM.NS",
+          "weight": 0.04,
+          "current_price": 29075.0,
+          "expected_return": -2.7429336009366145,
+          "risk": 0.22044806437189
+        },
+        {
+          "symbol": "UPL.NS",
+          "weight": 0.04,
+          "current_price": 650.7000122070312,
+          "expected_return": 3.162903243286763,
+          "risk": 0.2748491758051326
+        },
+        {
+          "symbol": "INFY.NS",
+          "weight": 0.04,
+          "current_price": 1614.9000244140625,
+          "expected_return": 4.187672720599989,
+          "risk": 0.2561485946808759
+        },
+        {
+          "symbol": "ULTRACEMCO.NS",
+          "weight": 0.04,
+          "current_price": 11733.0,
+          "expected_return": 4.404698344901226,
+          "risk": 0.23665694876738425
+        },
+        {
+          "symbol": "WIPRO.NS",
+          "weight": 0.04,
+          "current_price": 269.4100036621094,
+          "expected_return": 8.883325238233963,
+          "risk": 0.2987003035963775
+        },
+        {
+          "symbol": "MARUTI.NS",
+          "weight": 0.04,
+          "current_price": 12767.0,
+          "expected_return": 3.5358040710404604,
+          "risk": 0.22098278891481896
+        }
+      ],
+      "stock_count": 25,
+      "expected_return": 3.407149734973948,
+      "risk": 0.24735231996837784,
+      "sharpe_estimate": 13.77448060891253,
+      "risk_profile": "moderate"
+    },
+    "aggressive": {
+      "stocks": [],
+      "total_value": 0,
+      "expected_return": 0,
+      "risk": 0
+    }
+  },
+  "trading_signals": {
+    "BHARTIARTL.NS": {
+      "signal": "BUY",
+      "confidence": 0.5384413581976097,
+      "composite_score": 53.84413581976097,
+      "current_price": 1965.5999755859375,
+      "returns_1m": 5.8994667011637025,
+      "recommendation": "Strong fundamentals with 5.9% monthly return"
+    },
+    "TECHM.NS": {
+      "signal": "BUY",
+      "confidence": 0.523860963216436,
+      "composite_score": 52.386096321643606,
+      "current_price": 1705.0,
+      "returns_1m": 7.8909034562358205,
+      "recommendation": "Strong fundamentals with 7.9% monthly return"
+    },
+    "KOTAKBANK.NS": {
+      "signal": "BUY",
+      "confidence": 0.5091898297743375,
+      "composite_score": 50.91898297743374,
+      "current_price": 2198.300048828125,
+      "returns_1m": 5.977920121539482,
+      "recommendation": "Strong fundamentals with 6.0% monthly return"
+    },
+    "SBILIFE.NS": {
+      "signal": "BUY",
+      "confidence": 0.5091893259663579,
+      "composite_score": 50.91893259663579,
+      "current_price": 1842.699951171875,
+      "returns_1m": 1.9530776961927065,
+      "recommendation": "Strong fundamentals with 2.0% monthly return"
+    },
+    "HDFCLIFE.NS": {
+      "signal": "BUY",
+      "confidence": 0.5053658377285077,
+      "composite_score": 50.536583772850776,
+      "current_price": 785.0999755859375,
+      "returns_1m": -0.27613644045878516,
+      "recommendation": "Strong fundamentals with -0.3% monthly return"
+    },
+    "ICICIBANK.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 49.84828156342239,
+      "current_price": 1425.800048828125,
+      "returns_1m": -1.925987003685281,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "BAJAJFINSV.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 49.812665070977594,
+      "current_price": 2011.800048828125,
+      "returns_1m": -0.5241285333255741,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "HDFCBANK.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 49.54164047261872,
+      "current_price": 1980.199951171875,
+      "returns_1m": 2.94774895616714,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "DIVISLAB.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 49.16649521515479,
+      "current_price": 6586.5,
+      "returns_1m": -0.7459312839059651,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "BAJFINANCE.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 49.127576474375545,
+      "current_price": 928.0,
+      "returns_1m": 0.6158774717040849,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "HCLTECH.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 48.95796898843835,
+      "current_price": 1717.0999755859375,
+      "returns_1m": 3.6082739996355473,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "EICHERMOT.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 48.778441273974636,
+      "current_price": 5576.0,
+      "returns_1m": 4.684126537125688,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "APOLLOHOSP.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 48.29546105449618,
+      "current_price": 7042.0,
+      "returns_1m": 1.2290663408323077,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "GRASIM.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 47.686351000162816,
+      "current_price": 2831.800048828125,
+      "returns_1m": 9.861884758734018,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "TITAN.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 46.61256242912442,
+      "current_price": 3652.199951171875,
+      "returns_1m": 2.1680141286989363,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "M&M.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 45.76090174082284,
+      "current_price": 3215.5,
+      "returns_1m": 7.261990380478389,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "DRREDDY.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 45.7210157029766,
+      "current_price": 1341.5999755859375,
+      "returns_1m": 7.9671657770086,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "SUNPHARMA.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 44.93359668018187,
+      "current_price": 1669.5999755859375,
+      "returns_1m": 0.19202779194631425,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "BRITANNIA.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 44.041215621621575,
+      "current_price": 5708.0,
+      "returns_1m": 4.293805956513785,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "JSWSTEEL.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 43.95843404201592,
+      "current_price": 1024.449951171875,
+      "returns_1m": 2.342652464722783,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "BPCL.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 43.696556588808804,
+      "current_price": 319.6000061035156,
+      "returns_1m": -0.6527839676189306,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "SHREECEM.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 43.63624584041351,
+      "current_price": 29075.0,
+      "returns_1m": -2.7429336009366145,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "UPL.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 42.71046679712066,
+      "current_price": 650.7000122070312,
+      "returns_1m": 3.162903243286763,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "INFY.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 42.382050703453324,
+      "current_price": 1614.9000244140625,
+      "returns_1m": 4.187672720599989,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "ULTRACEMCO.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 42.29942823100645,
+      "current_price": 11733.0,
+      "returns_1m": 4.404698344901226,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "WIPRO.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 41.57371879475602,
+      "current_price": 269.4100036621094,
+      "returns_1m": 8.883325238233963,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "MARUTI.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 41.15007867063228,
+      "current_price": 12767.0,
+      "returns_1m": 3.5358040710404604,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "TATACONSUM.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 40.93941357815861,
+      "current_price": 1126.5,
+      "returns_1m": 1.1992970662660252,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "NESTLEIND.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 39.88594868328556,
+      "current_price": 2404.39990234375,
+      "returns_1m": -0.6035592251446897,
+      "recommendation": "Stable performance, monitor for opportunities"
+    },
+    "CIPLA.NS": {
+      "signal": "HOLD",
+      "confidence": 0.5,
+      "composite_score": 38.05650618259425,
+      "current_price": 1510.0,
+      "returns_1m": 2.8260129383724797,
+      "recommendation": "Stable performance, monitor for opportunities"
+    }
+  },
+  "summary": {
+    "total_stocks_analyzed": 50,
+    "buy_signals_generated": 5,
+    "signal_ratio": "5/30",
+    "best_performing_sector": {
+      "name": "Information Technology",
+      "return_1m": 4.010561474941446
+    },
+    "worst_performing_sector": {
+      "name": "FMCG & Consumer",
+      "return_1m": 0.06546877907154536
+    },
+    "top_stock": "BHARTIARTL.NS",
+    "portfolio_expected_returns": {
+      "conservative": 2.875352246461319,
+      "moderate": 3.407149734973948,
+      "aggressive": 0
+    }
+  }
+}

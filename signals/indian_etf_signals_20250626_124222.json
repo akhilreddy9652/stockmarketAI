@@ -1,0 +1,280 @@
+{
+  "scan_results": {
+    "portfolio_signals": {
+      "NIFTYBEES.NS": {
+        "status": "success",
+        "symbol": "NIFTYBEES.NS",
+        "timestamp": "2025-06-26T12:42:22.248312",
+        "recommendation": "HOLD",
+        "confidence": 0.4,
+        "strength": "WEAK",
+        "technical_details": {
+          "rsi": 56.66451376714755,
+          "macd": 1.2570287470083485,
+          "bb_position": 0.7615647864946693,
+          "volume_signal": "WEAK",
+          "price_change_1d": -0.669247600328287,
+          "price_change_5d": 0
+        },
+        "signal_breakdown": {
+          "rsi_signal": "NEUTRAL",
+          "macd_signal": "BUY",
+          "bb_signal": "NEUTRAL",
+          "volume_factor": 0.8,
+          "consensus": "HOLD"
+        },
+        "meets_threshold": false,
+        "basic_signals": {
+          "RSI": {
+            "signal": "NEUTRAL",
+            "confidence": 0.5,
+            "value": 56.66451376714755
+          },
+          "MACD": {
+            "signal": "BUY",
+            "confidence": 0.7,
+            "value": 1.2570287470083485
+          },
+          "Bollinger_Bands": {
+            "signal": "NEUTRAL",
+            "confidence": 0.4,
+            "value": 0.7615647864946693
+          },
+          "Moving_Averages": {
+            "signal": "BUY",
+            "confidence": 0.6,
+            "value": 282.0
+          },
+          "Overall": {
+            "signal": "BUY",
+            "confidence": 0.7,
+            "value": null
+          }
+        }
+      },
+      "JUNIORBEES.NS": {
+        "status": "success",
+        "symbol": "JUNIORBEES.NS",
+        "timestamp": "2025-06-26T12:42:22.388164",
+        "recommendation": "HOLD",
+        "confidence": 0.4,
+        "strength": "WEAK",
+        "technical_details": {
+          "rsi": 58.95631343853689,
+          "macd": 0.6605730383080299,
+          "bb_position": 0.41056999355444707,
+          "volume_signal": "WEAK",
+          "price_change_1d": -0.29833883211757595,
+          "price_change_5d": 0
+        },
+        "signal_breakdown": {
+          "rsi_signal": "NEUTRAL",
+          "macd_signal": "NEUTRAL",
+          "bb_signal": "NEUTRAL",
+          "volume_factor": 0.8,
+          "consensus": "HOLD"
+        },
+        "meets_threshold": false,
+        "basic_signals": {
+          "RSI": {
+            "signal": "NEUTRAL",
+            "confidence": 0.5,
+            "value": 58.95631343853689
+          },
+          "MACD": {
+            "signal": "SELL",
+            "confidence": 0.7,
+            "value": 0.6605730383080299
+          },
+          "Bollinger_Bands": {
+            "signal": "NEUTRAL",
+            "confidence": 0.4,
+            "value": 0.41056999355444707
+          },
+          "Moving_Averages": {
+            "signal": "NEUTRAL",
+            "confidence": 0.4,
+            "value": 721.8400268554688
+          },
+          "Overall": {
+            "signal": "SELL",
+            "confidence": 0.6,
+            "value": null
+          }
+        }
+      },
+      "BANKBEES.NS": {
+        "status": "success",
+        "symbol": "BANKBEES.NS",
+        "timestamp": "2025-06-26T12:42:22.557525",
+        "recommendation": "HOLD",
+        "confidence": 0.4,
+        "strength": "WEAK",
+        "technical_details": {
+          "rsi": 55.17765861017877,
+          "macd": 2.302512468069267,
+          "bb_position": 0.5742001345607799,
+          "volume_signal": "WEAK",
+          "price_change_1d": 0.04508188394018205,
+          "price_change_5d": 0
+        },
+        "signal_breakdown": {
+          "rsi_signal": "NEUTRAL",
+          "macd_signal": "NEUTRAL",
+          "bb_signal": "NEUTRAL",
+          "volume_factor": 0.8,
+          "consensus": "HOLD"
+        },
+        "meets_threshold": false,
+        "basic_signals": {
+          "RSI": {
+            "signal": "NEUTRAL",
+            "confidence": 0.5,
+            "value": 55.17765861017877
+          },
+          "MACD": {
+            "signal": "SELL",
+            "confidence": 0.7,
+            "value": 2.302512468069267
+          },
+          "Bollinger_Bands": {
+            "signal": "NEUTRAL",
+            "confidence": 0.4,
+            "value": 0.5742001345607799
+          },
+          "Moving_Averages": {
+            "signal": "BUY",
+            "confidence": 0.6,
+            "value": 577.010009765625
+          },
+          "Overall": {
+            "signal": "NEUTRAL",
+            "confidence": 0.5,
+            "value": null
+          }
+        }
+      },
+      "ICICIB22.NS": {
+        "status": "success",
+        "symbol": "ICICIB22.NS",
+        "timestamp": "2025-06-26T12:42:22.715178",
+        "recommendation": "HOLD",
+        "confidence": 0.4,
+        "strength": "WEAK",
+        "technical_details": {
+          "rsi": 45.93406519701464,
+          "macd": 0.0687794837858604,
+          "bb_position": 0.23120180773064275,
+          "volume_signal": "WEAK",
+          "price_change_1d": 0.41322033235715855,
+          "price_change_5d": 0
+        },
+        "signal_breakdown": {
+          "rsi_signal": "NEUTRAL",
+          "macd_signal": "NEUTRAL",
+          "bb_signal": "NEUTRAL",
+          "volume_factor": 0.8,
+          "consensus": "HOLD"
+        },
+        "meets_threshold": false,
+        "basic_signals": {
+          "RSI": {
+            "signal": "NEUTRAL",
+            "confidence": 0.5,
+            "value": 45.93406519701464
+          },
+          "MACD": {
+            "signal": "SELL",
+            "confidence": 0.7,
+            "value": 0.0687794837858604
+          },
+          "Bollinger_Bands": {
+            "signal": "NEUTRAL",
+            "confidence": 0.4,
+            "value": 0.23120180773064275
+          },
+          "Moving_Averages": {
+            "signal": "NEUTRAL",
+            "confidence": 0.4,
+            "value": 109.3499984741211
+          },
+          "Overall": {
+            "signal": "SELL",
+            "confidence": 0.6,
+            "value": null
+          }
+        }
+      },
+      "ITBEES.NS": {
+        "status": "success",
+        "symbol": "ITBEES.NS",
+        "timestamp": "2025-06-26T12:42:22.836875",
+        "recommendation": "HOLD",
+        "confidence": 0.4,
+        "strength": "WEAK",
+        "technical_details": {
+          "rsi": 48.55841741540009,
+          "macd": 0.42807617232465844,
+          "bb_position": 0.26203473882376194,
+          "volume_signal": "WEAK",
+          "price_change_1d": -3.821653586247436,
+          "price_change_5d": 0
+        },
+        "signal_breakdown": {
+          "rsi_signal": "NEUTRAL",
+          "macd_signal": "NEUTRAL",
+          "bb_signal": "NEUTRAL",
+          "volume_factor": 0.8,
+          "consensus": "HOLD"
+        },
+        "meets_threshold": false,
+        "basic_signals": {
+          "RSI": {
+            "signal": "NEUTRAL",
+            "confidence": 0.5,
+            "value": 48.55841741540009
+          },
+          "MACD": {
+            "signal": "SELL",
+            "confidence": 0.7,
+            "value": 0.42807617232465844
+          },
+          "Bollinger_Bands": {
+            "signal": "NEUTRAL",
+            "confidence": 0.4,
+            "value": 0.26203473882376194
+          },
+          "Moving_Averages": {
+            "signal": "NEUTRAL",
+            "confidence": 0.4,
+            "value": 40.77000045776367
+          },
+          "Overall": {
+            "signal": "SELL",
+            "confidence": 0.6,
+            "value": null
+          }
+        }
+      }
+    },
+    "signal_summary": {
+      "BUY": 0,
+      "SELL": 0,
+      "HOLD": 5
+    },
+    "high_confidence_signals": [],
+    "scan_time": "2025-06-26T12:42:22.836946"
+  },
+  "portfolio_recommendations": {
+    "portfolio_action": "MAINTAIN_CURRENT",
+    "weighted_signal_strength": 0.0,
+    "risk_level": "HIGH",
+    "high_confidence_ratio": 0.0,
+    "recommendation_summary": {
+      "action": "MAINTAIN_CURRENT",
+      "confidence": 0.0,
+      "risk": "HIGH"
+    }
+  },
+  "generated_at": "2025-06-26T12:42:22.837320"
+}

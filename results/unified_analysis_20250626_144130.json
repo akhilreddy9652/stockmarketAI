@@ -1,0 +1,174 @@
+{
+  "signals": {
+    "timestamp": "2025-06-26 14:41:29.572060",
+    "rl_signals": {
+      "RELIANCE.NS": {
+        "signal": "SELL",
+        "current_price": 1210.699951171875,
+        "ma_20": 1263.2450134277344,
+        "confidence": 0.7
+      },
+      "TCS.NS": {
+        "signal": "SELL",
+        "current_price": 4112.36083984375,
+        "ma_20": 4274.16611328125,
+        "confidence": 0.7
+      },
+      "HDFCBANK.NS": {
+        "signal": "SELL",
+        "current_price": 1777.9000244140625,
+        "ma_20": 1829.252490234375,
+        "confidence": 0.7
+      },
+      "INFY.NS": {
+        "signal": "HOLD",
+        "current_price": 1879.554443359375,
+        "ma_20": 1909.0938415527344,
+        "confidence": 0.7
+      },
+      "ICICIBANK.NS": {
+        "signal": "HOLD",
+        "current_price": 1294.6500244140625,
+        "ma_20": 1315.5825134277343,
+        "confidence": 0.7
+      }
+    },
+    "portfolio_allocation": {
+      "weights": {
+        "RELIANCE.NS": 5.17508320084843e-17,
+        "TCS.NS": 0.0,
+        "HDFCBANK.NS": 0.0,
+        "INFY.NS": 0.29705308294358224,
+        "ICICIBANK.NS": 2.890156662113612e-17,
+        "HINDUNILVR.NS": 7.876550521936293e-17,
+        "ITC.NS": 0.21662930229685937,
+        "SBIN.NS": 0.060649882145403636,
+        "BHARTIARTL.NS": 0.42566773261415497,
+        "KOTAKBANK.NS": 6.906035328895324e-17
+      },
+      "expected_return": 0.2667514404463869,
+      "sharpe_ratio": 1.0231227942256054
+    },
+    "unified_recommendation": {
+      "RELIANCE.NS": {
+        "action": "SELL",
+        "confidence": 0.8,
+        "allocation": 0.0,
+        "reasoning": [
+          "RL: SELL (70.0%)"
+        ]
+      },
+      "TCS.NS": {
+        "action": "SELL",
+        "confidence": 0.8,
+        "allocation": 0.0,
+        "reasoning": [
+          "RL: SELL (70.0%)"
+        ]
+      },
+      "HDFCBANK.NS": {
+        "action": "SELL",
+        "confidence": 0.8,
+        "allocation": 0.0,
+        "reasoning": [
+          "RL: SELL (70.0%)"
+        ]
+      },
+      "INFY.NS": {
+        "action": "BUY",
+        "confidence": 0.7,
+        "allocation": 0.15,
+        "reasoning": [
+          "Portfolio: 29.7%"
+        ]
+      },
+      "ICICIBANK.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "HINDUNILVR.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "ITC.NS": {
+        "action": "BUY",
+        "confidence": 0.7,
+        "allocation": 0.15,
+        "reasoning": [
+          "Portfolio: 21.7%"
+        ]
+      },
+      "SBIN.NS": {
+        "action": "HOLD",
+        "confidence": 0.7,
+        "allocation": 0.060649882145403636,
+        "reasoning": [
+          "Portfolio: 6.1%"
+        ]
+      },
+      "BHARTIARTL.NS": {
+        "action": "BUY",
+        "confidence": 0.7,
+        "allocation": 0.15,
+        "reasoning": [
+          "Portfolio: 42.6%"
+        ]
+      },
+      "KOTAKBANK.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      }
+    }
+  },
+  "trades": [
+    {
+      "symbol": "INFY.NS",
+      "action": "BUY",
+      "shares": 92,
+      "price": 1618.4000244140625,
+      "value": 148892.80224609375,
+      "confidence": 0.7
+    },
+    {
+      "symbol": "ITC.NS",
+      "action": "BUY",
+      "shares": 357,
+      "price": 419.1000061035156,
+      "value": 149618.70217895508,
+      "confidence": 0.7
+    },
+    {
+      "symbol": "BHARTIARTL.NS",
+      "action": "BUY",
+      "shares": 74,
+      "price": 2003.199951171875,
+      "value": 148236.79638671875,
+      "confidence": 0.7
+    }
+  ],
+  "report": {
+    "timestamp": "2025-06-26 14:41:30.699929",
+    "portfolio_summary": {
+      "initial_capital": 1000000,
+      "current_capital": 1000000,
+      "risk_tolerance": "moderate"
+    },
+    "recent_signals": {
+      "total_analyzed": 10,
+      "buy_signals": 3,
+      "sell_signals": 3,
+      "avg_confidence": 0.67
+    },
+    "recommendations": [
+      "Monitor Indian market conditions daily",
+      "Maintain diversified portfolio",
+      "Review allocation monthly"
+    ]
+  }
+}

@@ -1,0 +1,127 @@
+
+🚀 COMPREHENSIVE PROJECTION ANALYSIS REPORT
+============================================
+📅 Generated: 2025-06-26 19:22:54
+
+📊 OVERVIEW STATISTICS
+----------------------
+• Total Stocks Analyzed: 8
+• Successful Analyses: 8
+• Failed Analyses: 0
+• Success Rate: 100.0%
+
+🎯 LSTM MODEL PERFORMANCE
+-------------------------
+• Average MAPE: 6.03%
+• Average Directional Accuracy: 53.8%
+• Best MAPE: 1.86%
+• Worst MAPE: 11.46%
+• Best Directional Accuracy: 59.8%
+• Worst Directional Accuracy: 41.5%
+
+🌲 RANDOM FOREST PERFORMANCE
+----------------------------
+• Average MAPE: 4.11%
+• Average Directional Accuracy: 50.9%
+
+🏆 TOP PERFORMERS
+-----------------
+• Best MAPE: RELIANCE.NS (1.86%)
+• Best Directional: RELIANCE.NS (59.8%)
+
+📉 UNDERPERFORMERS
+------------------
+• Worst MAPE: KOTAKBANK.NS (11.46%)
+• Worst Directional: BHARTIARTL.NS (41.5%)
+
+💹 TRADING SIGNALS SUMMARY
+--------------------------
+• 🟢 Buy Signals: 2
+• 🔴 Sell Signals: 4
+• 🟡 Hold Signals: 2
+
+📈 DETAILED STOCK ANALYSIS
+--------------------------
+RELIANCE.NS:
+  Current Price: ₹1467.30
+  Predicted Price: ₹1461.85
+  Expected Change: -0.37%
+  LSTM MAPE: 1.86%
+  Directional Accuracy: 59.8%
+  Recommendation: 🟡 Hold
+
+TCS.NS:
+  Current Price: ₹3444.80
+  Predicted Price: ₹3400.10
+  Expected Change: -1.30%
+  LSTM MAPE: 7.75%
+  Directional Accuracy: 50.0%
+  Recommendation: 🟡 Hold
+
+HDFCBANK.NS:
+  Current Price: ₹1980.20
+  Predicted Price: ₹1783.40
+  Expected Change: -9.94%
+  LSTM MAPE: 5.88%
+  Directional Accuracy: 53.7%
+  Recommendation: 🔴 Strong Sell
+
+INFY.NS:
+  Current Price: ₹1614.90
+  Predicted Price: ₹1663.11
+  Expected Change: +2.99%
+  LSTM MAPE: 2.63%
+  Directional Accuracy: 54.9%
+  Recommendation: 🟢 Buy
+
+ICICIBANK.NS:
+  Current Price: ₹1425.80
+  Predicted Price: ₹1277.79
+  Expected Change: -10.38%
+  LSTM MAPE: 7.68%
+  Directional Accuracy: 52.4%
+  Recommendation: 🔴 Strong Sell
+
+BHARTIARTL.NS:
+  Current Price: ₹1965.60
+  Predicted Price: ₹1659.29
+  Expected Change: -15.58%
+  LSTM MAPE: 8.84%
+  Directional Accuracy: 41.5%
+  Recommendation: 🔴 Strong Sell
+
+KOTAKBANK.NS:
+  Current Price: ₹2198.30
+  Predicted Price: ₹1870.83
+  Expected Change: -14.90%
+  LSTM MAPE: 11.46%
+  Directional Accuracy: 58.5%
+  Recommendation: 🔴 Strong Sell
+
+ASIANPAINT.NS:
+  Current Price: ₹2279.90
+  Predicted Price: ₹2340.78
+  Expected Change: +2.67%
+  LSTM MAPE: 2.14%
+  Directional Accuracy: 59.8%
+  Recommendation: 🟢 Buy
+
+
+🔍 PERFORMANCE ASSESSMENT
+-------------------------
+• MAPE Assessment: 🟡 GOOD - MAPE < 10%
+• Directional Assessment: 🟠 ACCEPTABLE - >50% accuracy
+
+💡 RECOMMENDATIONS
+------------------
+• Improve directional accuracy with better trend indicators
+
+📊 COMPARISON WITH PREVIOUS SYSTEM
+----------------------------------
+• Previous MAPE: ~100% → Current MAPE: 6.03%
+• Previous Directional: ~45% → Current Directional: 53.8%
+• Improvement Factor: 16.6x better MAPE
+• Directional Improvement: +8.8%
+
+============================================
+🎉 ANALYSIS COMPLETE - SIGNIFICANT IMPROVEMENTS ACHIEVED!

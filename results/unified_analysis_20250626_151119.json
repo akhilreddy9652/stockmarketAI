@@ -1,0 +1,427 @@
+{
+  "signals": {
+    "timestamp": "2025-06-26 15:11:18.465501",
+    "rl_signals": {
+      "RELIANCE.NS": {
+        "signal": "SELL",
+        "current_price": 1210.699951171875,
+        "ma_20": 1263.2450134277344,
+        "confidence": 0.7
+      },
+      "TCS.NS": {
+        "signal": "SELL",
+        "current_price": 4112.36083984375,
+        "ma_20": 4274.16611328125,
+        "confidence": 0.7
+      },
+      "HDFCBANK.NS": {
+        "signal": "SELL",
+        "current_price": 1777.9000244140625,
+        "ma_20": 1829.252490234375,
+        "confidence": 0.7
+      },
+      "INFY.NS": {
+        "signal": "HOLD",
+        "current_price": 1879.554443359375,
+        "ma_20": 1909.0938415527344,
+        "confidence": 0.7
+      },
+      "ICICIBANK.NS": {
+        "signal": "HOLD",
+        "current_price": 1294.6500244140625,
+        "ma_20": 1315.5825134277343,
+        "confidence": 0.7
+      },
+      "HINDUNILVR.NS": {
+        "signal": "HOLD",
+        "current_price": 2319.11181640625,
+        "ma_20": 2365.805798339844,
+        "confidence": 0.7
+      },
+      "ITC.NS": {
+        "signal": "HOLD",
+        "current_price": 461.0921630859375,
+        "ma_20": 454.7292083740234,
+        "confidence": 0.7
+      },
+      "SBIN.NS": {
+        "signal": "SELL",
+        "current_price": 772.7828369140625,
+        "ma_20": 823.9357299804688,
+        "confidence": 0.7
+      }
+    },
+    "portfolio_allocation": {
+      "weights": {
+        "RELIANCE.NS": 6.429085468643048e-17,
+        "TCS.NS": 1.0576059247823543e-16,
+        "HDFCBANK.NS": 0.0,
+        "INFY.NS": 0.0,
+        "ICICIBANK.NS": 2.0121713226053118e-16,
+        "HINDUNILVR.NS": 0.0,
+        "ITC.NS": 0.027648367660767184,
+        "SBIN.NS": 9.391516704343361e-17,
+        "BHARTIARTL.NS": 0.16651592969361942,
+        "KOTAKBANK.NS": 0.0,
+        "ASIANPAINT.NS": 0.0,
+        "MARUTI.NS": 2.404924604786446e-16,
+        "SUNPHARMA.NS": 0.37467035823122136,
+        "TATAMOTORS.NS": 0.01741932879876908,
+        "WIPRO.NS": 9.584717211997009e-17,
+        "ULTRACEMCO.NS": 1.553186819939264e-17,
+        "TITAN.NS": 0.04702548548111746,
+        "BAJFINANCE.NS": 1.1713122667481122e-17,
+        "TECHM.NS": 2.928788584234474e-17,
+        "BAJAJFINSV.NS": 1.3147278677603778e-16,
+        "NTPC.NS": 0.1262693562717669,
+        "HCLTECH.NS": 0.24045117386273898,
+        "ONGC.NS": 6.946359764387822e-18,
+        "JSWSTEEL.NS": 9.689892645481614e-17,
+        "TATACONSUM.NS": 8.817890620057487e-17
+      },
+      "expected_return": 0.3173641873336762,
+      "sharpe_ratio": 1.3828524114772056
+    },
+    "unified_recommendation": {
+      "RELIANCE.NS": {
+        "action": "SELL",
+        "confidence": 0.8,
+        "allocation": 0.0,
+        "reasoning": [
+          "RL: SELL (70.0%)"
+        ]
+      },
+      "TCS.NS": {
+        "action": "SELL",
+        "confidence": 0.8,
+        "allocation": 0.0,
+        "reasoning": [
+          "RL: SELL (70.0%)"
+        ]
+      },
+      "HDFCBANK.NS": {
+        "action": "SELL",
+        "confidence": 0.8,
+        "allocation": 0.0,
+        "reasoning": [
+          "RL: SELL (70.0%)"
+        ]
+      },
+      "INFY.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "ICICIBANK.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "HINDUNILVR.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "ITC.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "SBIN.NS": {
+        "action": "SELL",
+        "confidence": 0.8,
+        "allocation": 0.0,
+        "reasoning": [
+          "RL: SELL (70.0%)"
+        ]
+      },
+      "BHARTIARTL.NS": {
+        "action": "BUY",
+        "confidence": 0.7,
+        "allocation": 0.15,
+        "reasoning": [
+          "Portfolio: 16.7%"
+        ]
+      },
+      "KOTAKBANK.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "ASIANPAINT.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "MARUTI.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "SUNPHARMA.NS": {
+        "action": "BUY",
+        "confidence": 0.7,
+        "allocation": 0.15,
+        "reasoning": [
+          "Portfolio: 37.5%"
+        ]
+      },
+      "TATAMOTORS.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "WIPRO.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "ULTRACEMCO.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "TITAN.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "BAJFINANCE.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "TECHM.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "BAJAJFINSV.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "NTPC.NS": {
+        "action": "BUY",
+        "confidence": 0.7,
+        "allocation": 0.1262693562717669,
+        "reasoning": [
+          "Portfolio: 12.6%"
+        ]
+      },
+      "HCLTECH.NS": {
+        "action": "BUY",
+        "confidence": 0.7,
+        "allocation": 0.15,
+        "reasoning": [
+          "Portfolio: 24.0%"
+        ]
+      },
+      "ONGC.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "JSWSTEEL.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "TATACONSUM.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "ADANIENT.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "COALINDIA.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "HINDALCO.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "TATASTEEL.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "BRITANNIA.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "GRASIM.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "INDUSINDBK.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "M&M.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "BAJAJ-AUTO.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "VEDL.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "UPL.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "ZOMATO.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "NYKAA.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "DELHIVERY.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "MAPMYINDIA.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "RATEGAIN.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "BIKAJI.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "DEVYANI.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "SAPPHIRE.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      },
+      "SUZLON.NS": {
+        "action": "HOLD",
+        "confidence": 0.5,
+        "allocation": 0.0,
+        "reasoning": []
+      }
+    }
+  },
+  "trades": [
+    {
+      "symbol": "BHARTIARTL.NS",
+      "action": "BUY",
+      "shares": 74,
+      "price": 2013.5999755859375,
+      "value": 149006.39819335938,
+      "confidence": 0.7
+    },
+    {
+      "symbol": "SUNPHARMA.NS",
+      "action": "BUY",
+      "shares": 89,
+      "price": 1668.5,
+      "value": 148496.5,
+      "confidence": 0.7
+    },
+    {
+      "symbol": "NTPC.NS",
+      "action": "BUY",
+      "shares": 374,
+      "price": 337.54998779296875,
+      "value": 126243.69543457031,
+      "confidence": 0.7
+    },
+    {
+      "symbol": "HCLTECH.NS",
+      "action": "BUY",
+      "shares": 86,
+      "price": 1724.300048828125,
+      "value": 148289.80419921875,
+      "confidence": 0.7
+    }
+  ],
+  "report": {
+    "timestamp": "2025-06-26 15:11:19.479139",
+    "portfolio_summary": {
+      "initial_capital": 1000000,
+      "current_capital": 1000000,
+      "risk_tolerance": "moderate"
+    },
+    "recent_signals": {
+      "total_analyzed": 45,
+      "buy_signals": 4,
+      "sell_signals": 4,
+      "avg_confidence": 0.5444444444444444
+    },
+    "recommendations": [
+      "Monitor Indian market conditions daily",
+      "Maintain diversified portfolio",
+      "Review allocation monthly"
+    ]
+  }
+}

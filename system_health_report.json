@@ -1,0 +1,34 @@
+{
+  "timestamp": "2025-06-26T15:06:38.499073",
+  "health_score": 100.0,
+  "status": "\ud83d\udfe2 EXCELLENT",
+  "detailed_results": {
+    "file_dependencies": {
+      "status": "PASS",
+      "missing_files": [],
+      "total_files": 9,
+      "present_files": 9
+    },
+    "directory_structure": {
+      "status": "PASS",
+      "missing_dirs": [],
+      "total_dirs": 4,
+      "present_dirs": 4
+    },
+    "data_files": {
+      "status": "PASS",
+      "data_directories": {
+        "data/raw_data": 11,
+        "data/processed_data": 8,
+        "data/featured_data": 1
+      },
+      "total_data_files": 20
+    },
+    "model_files": {
+      "status": "PASS",
+      "total_models": 70,
+      "h5_models": 29,
+      "pkl_models": 39
+    }
+  }
+}

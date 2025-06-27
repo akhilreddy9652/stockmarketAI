@@ -1,0 +1,17 @@
+{
+  "balance": 985000.0,
+  "positions": {
+    "RELIANCE.NS": 10
+  },
+  "orders": [
+    {
+      "order_id": "PAPER_1750930602",
+      "symbol": "RELIANCE.NS",
+      "quantity": 10,
+      "action": "BUY",
+      "price": 1500.0,
+      "timestamp": "2025-06-26T15:06:42.556495",
+      "status": "COMPLETE"
+    }
+  ]
+}

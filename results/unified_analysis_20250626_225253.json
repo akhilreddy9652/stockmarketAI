@@ -1,0 +1,60 @@
+{
+  "signals": {
+    "timestamp": "2025-06-26 22:52:53.465159",
+    "rl_signals": {
+      "MPHASIS.NS": {
+        "signal": "SELL",
+        "current_price": 2935.25,
+        "ma_20": 3065.3650024414064,
+        "confidence": 0.7
+      },
+      "PERSISTENT.NS": {
+        "signal": "BUY",
+        "current_price": 6615.78125,
+        "ma_20": 6326.2530517578125,
+        "confidence": 0.7
+      },
+      "COFORGE.NS": {
+        "signal": "BUY",
+        "current_price": 9817.9501953125,
+        "ma_20": 9204.152490234375,
+        "confidence": 0.7
+      },
+      "LTTS.NS": {
+        "signal": "SELL",
+        "current_price": 4712.72900390625,
+        "ma_20": 5091.732275390625,
+        "confidence": 0.7
+      },
+      "CYIENT.NS": {
+        "signal": "SELL",
+        "current_price": 1849.050048828125,
+        "ma_20": 1979.9025024414063,
+        "confidence": 0.7
+      },
+      "KPITTECH.NS": {
+        "signal": "HOLD",
+        "current_price": 1467.550048828125,
+        "ma_20": 1480.467108154297,
+        "confidence": 0.7
+      }
+    },
+    "portfolio_allocation": {},
+    "unified_recommendation": {}
+  },
+  "trades": [],
+  "report": {
+    "timestamp": "2025-06-26 22:52:53.466530",
+    "portfolio_summary": {
+      "initial_capital": 1000000,
+      "current_capital": 1000000,
+      "risk_tolerance": "aggressive"
+    },
+    "recent_signals": {},
+    "recommendations": [
+      "Monitor Indian market conditions daily",
+      "Maintain diversified portfolio",
+      "Review allocation monthly"
+    ]
+  }
+}

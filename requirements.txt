@@ -1,0 +1,14 @@
+yfinance
+alpha_vantage
+nsepy
+pandas
+numpy
+scikit-learn
+torch
+fastapi
+uvicorn
+requests
+beautifulsoup4
+streamlit
+plotly
+textblob
