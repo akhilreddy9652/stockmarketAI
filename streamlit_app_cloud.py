@@ -200,23 +200,23 @@ if st.sidebar.button("Analyze") or symbol:
             with col1:
                 st.metric(
                     "Current Price",
-                    format_currency(current_price, currency_symbol),
+                    format_currency(float(current_price), currency_symbol),
                     f"{price_change_pct:+.2f}%"
                 )
             with col2:
                 st.metric(
                     "Day High",
-                    format_currency(latest['High'], currency_symbol)
+                    format_currency(float(latest['High']), currency_symbol)
                 )
             with col3:
                 st.metric(
                     "Day Low",
-                    format_currency(latest['Low'], currency_symbol)
+                    format_currency(float(latest['Low']), currency_symbol)
                 )
             with col4:
                 st.metric(
                     "Volume",
-                    f"{latest['Volume']:,.0f}"
+                    f"{float(latest['Volume']):,.0f}"
                 )
 
         with tab2:
@@ -254,15 +254,15 @@ if st.sidebar.button("Analyze") or symbol:
             st.subheader("📊 Latest Technical Indicators")
             cols = st.columns(3)
             with cols[0]:
-                st.metric("RSI (14)", f"{latest['RSI_14']:.2f}")
-                st.metric("SMA 20", format_currency(latest['SMA_20'], currency_symbol))
+                st.metric("RSI (14)", f"{float(latest['RSI_14']):.2f}")
+                st.metric("SMA 20", format_currency(float(latest['SMA_20']), currency_symbol))
             with cols[1]:
-                st.metric("Bollinger Upper", format_currency(latest['BB_Upper'], currency_symbol))
-                st.metric("Bollinger Lower", format_currency(latest['BB_Lower'], currency_symbol))
+                st.metric("Bollinger Upper", format_currency(float(latest['BB_Upper']), currency_symbol))
+                st.metric("Bollinger Lower", format_currency(float(latest['BB_Lower']), currency_symbol))
             with cols[2]:
-                st.metric("SMA 50", format_currency(latest['SMA_50'], currency_symbol))
+                st.metric("SMA 50", format_currency(float(latest['SMA_50']), currency_symbol))
                 vol = df['Close'].pct_change().std() * np.sqrt(252)
-                st.metric("Volatility (Annualized)", f"{vol:.2%}")
+                st.metric("Volatility (Annualized)", f"{float(vol):.2%}")
 
         with tab3:
             st.subheader("🎯 Trading Signals")
