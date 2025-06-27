@@ -133,22 +133,79 @@ def format_currency(value: float, symbol: str) -> str:
 
 # Simple forecasting fallback
 def simple_forecast(df, days=30):
-    """Simple moving average forecast as fallback"""
-    latest_price = df['Close'].iloc[-1]
-    ma_20 = df['Close'].rolling(20).mean().iloc[-1]
-    trend = (latest_price - ma_20) / ma_20
+    """Realistic forecasting model using historical volatility and trend analysis"""
+    if len(df) < 30:
+        # Not enough data for reliable forecast
+        return pd.DataFrame()
     
-    forecast_dates = pd.date_range(start=df['Date'].iloc[-1] + timedelta(days=1), periods=days)
+    # Calculate basic statistics
+    latest_price = float(df['Close'].iloc[-1])
+    
+    # Calculate historical volatility (annualized)
+    returns = df['Close'].pct_change().dropna()
+    daily_volatility = float(returns.std())
+    
+    # Calculate trend using multiple timeframes
+    ma_5 = float(df['Close'].rolling(5).mean().iloc[-1])
+    ma_20 = float(df['Close'].rolling(20).mean().iloc[-1])
+    ma_50 = float(df['Close'].rolling(50).mean().iloc[-1]) if len(df) >= 50 else ma_20
+    
+    # Determine trend direction and strength
+    short_trend = (latest_price - ma_5) / ma_5 if ma_5 > 0 else 0
+    medium_trend = (latest_price - ma_20) / ma_20 if ma_20 > 0 else 0
+    long_trend = (latest_price - ma_50) / ma_50 if ma_50 > 0 else 0
+    
+    # Weighted trend calculation
+    trend = (short_trend * 0.5 + medium_trend * 0.3 + long_trend * 0.2)
+    
+    # Limit trend to reasonable bounds (-5% to +5% per month)
+    monthly_trend_limit = 0.05
+    trend = max(-monthly_trend_limit, min(monthly_trend_limit, trend))
+    
+    # Calculate daily trend component
+    daily_trend = trend / 30  # Spread over 30 days
+    
+    # Limit daily volatility to reasonable bounds
+    daily_volatility = min(daily_volatility, 0.05)  # Max 5% daily volatility
+    
+    # Generate forecast dates (business days only)
+    forecast_dates = pd.date_range(
+        start=df['Date'].iloc[-1] + timedelta(days=1), 
+        periods=days, 
+        freq='B'  # Business days only
+    )
+    
+    # Generate realistic price predictions
     forecast_prices = []
+    current_price = latest_price
     
-    for i in range(days):
-        # Simple trend continuation with some randomness
-        price_change = trend * (1 + np.random.normal(0, 0.01))
-        if i == 0:
-            forecast_prices.append(latest_price * (1 + price_change))
-        else:
-            forecast_prices.append(forecast_prices[-1] * (1 + price_change * 0.9))
+    # Set random seed for reproducible results
+    np.random.seed(42)
     
+    for i in range(len(forecast_dates)):
+        # Mean reversion factor (prices tend to revert to mean over time)
+        reversion_factor = 0.95 ** (i / 30)  # Stronger reversion over time
+        
+        # Random component based on historical volatility
+        random_factor = np.random.normal(0, daily_volatility * 0.5)  # Reduced randomness
+        
+        # Trend component that decays over time
+        trend_factor = daily_trend * reversion_factor
+        
+        # Calculate price change (limit to ±10% per day)
+        price_change_pct = trend_factor + random_factor
+        price_change_pct = max(-0.10, min(0.10, price_change_pct))
+        
+        # Apply price change
+        current_price = current_price * (1 + price_change_pct)
+        
+        # Ensure price doesn't go negative or become unrealistic
+        current_price = max(current_price, latest_price * 0.1)  # Can't drop below 10% of current
+        current_price = min(current_price, latest_price * 10)   # Can't rise above 10x current
+        
+        forecast_prices.append(current_price)
+    
+    # Create forecast DataFrame
     forecast_df = pd.DataFrame({
         'Date': forecast_dates,
         'Predicted_Close': forecast_prices
