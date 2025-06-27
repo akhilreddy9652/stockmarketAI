@@ -241,7 +241,7 @@ def get_trading_signals(df: pd.DataFrame) -> dict:
     signals = {}
     
     # RSI signals
-    current_rsi = df['RSI_14'].iloc[-1]
+    current_rsi = float(df['RSI_14'].iloc[-1])
     if current_rsi < 30:
         signals['RSI'] = {'signal': 'BUY', 'confidence': 0.8, 'value': current_rsi}
     elif current_rsi > 70:
@@ -250,16 +250,16 @@ def get_trading_signals(df: pd.DataFrame) -> dict:
         signals['RSI'] = {'signal': 'NEUTRAL', 'confidence': 0.5, 'value': current_rsi}
     
     # MACD signals
-    current_macd = df['MACD'].iloc[-1]
-    current_signal = df['MACD_Signal'].iloc[-1]
+    current_macd = float(df['MACD'].iloc[-1])
+    current_signal = float(df['MACD_Signal'].iloc[-1])
     if current_macd > current_signal:
         signals['MACD'] = {'signal': 'BUY', 'confidence': 0.7, 'value': current_macd}
     else:
         signals['MACD'] = {'signal': 'SELL', 'confidence': 0.7, 'value': current_macd}
     
     # Bollinger Bands signals
-    current_price = df['Close'].iloc[-1]
-    bb_position = df['BB_Position'].iloc[-1]
+    current_price = float(df['Close'].iloc[-1])
+    bb_position = float(df['BB_Position'].iloc[-1])
     if bb_position < 0.2:
         signals['Bollinger_Bands'] = {'signal': 'BUY', 'confidence': 0.6, 'value': bb_position}
     elif bb_position > 0.8:
@@ -268,9 +268,9 @@ def get_trading_signals(df: pd.DataFrame) -> dict:
         signals['Bollinger_Bands'] = {'signal': 'NEUTRAL', 'confidence': 0.4, 'value': bb_position}
     
     # Moving Average signals
-    current_price = df['Close'].iloc[-1]
-    ma_20 = df['MA_20'].iloc[-1]
-    ma_50 = df['MA_50'].iloc[-1]
+    current_price = float(df['Close'].iloc[-1])
+    ma_20 = float(df['MA_20'].iloc[-1])
+    ma_50 = float(df['MA_50'].iloc[-1])
     
     if current_price > ma_20 > ma_50:
         signals['Moving_Averages'] = {'signal': 'BUY', 'confidence': 0.6, 'value': current_price}
