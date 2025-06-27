@@ -83,11 +83,22 @@ def add_technical_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df['BB_Lower'] = bb_result[2]
     df['BB_Width'] = (df['BB_Upper'] - df['BB_Lower']) / df['BB_Middle']
     
-    # Calculate BB_Position safely
-    bb_range = df['BB_Upper'] - df['BB_Lower']
-    bb_range = bb_range.replace(0, np.nan)  # Avoid division by zero
-    df['BB_Position'] = (df['Close'] - df['BB_Lower']) / bb_range
-    df['BB_Position'] = df['BB_Position'].fillna(0.5)  # Fill NaN with neutral position
+    # Calculate BB_Position safely - ensure we work with Series
+    try:
+        bb_upper = df['BB_Upper'].astype(float)
+        bb_lower = df['BB_Lower'].astype(float)
+        close_price = df['Close'].astype(float)
+        
+        # Calculate range and handle division by zero
+        bb_range = bb_upper - bb_lower
+        bb_range = bb_range.replace(0, np.nan)
+        
+        # Calculate position
+        bb_position = (close_price - bb_lower) / bb_range
+        df['BB_Position'] = bb_position.fillna(0.5)
+    except Exception as e:
+        # Fallback: set all BB_Position to neutral (0.5)
+        df['BB_Position'] = 0.5
     
     # Stochastic Oscillator
     stoch_result = calculate_stochastic(
