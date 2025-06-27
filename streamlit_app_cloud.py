@@ -201,7 +201,7 @@ if st.sidebar.button("Analyze") or symbol:
                 st.metric(
                     "Current Price",
                     format_currency(float(current_price), currency_symbol),
-                    f"{price_change_pct:+.2f}%"
+                    f"{float(price_change_pct):+.2f}%"
                 )
             with col2:
                 st.metric(
@@ -297,11 +297,11 @@ if st.sidebar.button("Analyze") or symbol:
             
             col1, col2, col3 = st.columns(3)
             with col1:
-                st.metric("Daily Volatility", f"{returns.std():.2%}")
+                st.metric("Daily Volatility", f"{float(returns.std()):.2%}")
             with col2:
-                st.metric("Max Daily Gain", f"{returns.max():.2%}")
+                st.metric("Max Daily Gain", f"{float(returns.max()):.2%}")
             with col3:
-                st.metric("Max Daily Loss", f"{returns.min():.2%}")
+                st.metric("Max Daily Loss", f"{float(returns.min()):.2%}")
 
     except Exception as e:
         st.error(f"❌ Error: {str(e)}")
