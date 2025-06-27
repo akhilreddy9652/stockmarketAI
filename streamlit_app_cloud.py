@@ -36,15 +36,28 @@ except ImportError:
         rs = gain / loss
         df['RSI_14'] = 100 - (100 / (1 + rs))
         
-        # Basic moving averages
-        df['SMA_20'] = df['Close'].rolling(window=20).mean()
-        df['SMA_50'] = df['Close'].rolling(window=50).mean()
+        # Basic moving averages - use consistent names
+        df['MA_20'] = df['Close'].rolling(window=20).mean()
+        df['MA_50'] = df['Close'].rolling(window=50).mean()
+        df['SMA_20'] = df['MA_20']  # Alias for compatibility
+        df['SMA_50'] = df['MA_50']  # Alias for compatibility
         
         # Basic Bollinger Bands
         df['BB_Middle'] = df['Close'].rolling(window=20).mean()
         bb_std = df['Close'].rolling(window=20).std()
         df['BB_Upper'] = df['BB_Middle'] + (bb_std * 2)
         df['BB_Lower'] = df['BB_Middle'] - (bb_std * 2)
+        
+        # Add other missing columns with default values
+        df['Volume_Ratio'] = 1.0
+        df['Volatility'] = df['Close'].pct_change().rolling(window=20).std()
+        df['ATR_14'] = (df['High'] - df['Low']).rolling(window=14).mean()
+        df['Williams_R'] = -50.0  # Neutral value
+        df['Momentum'] = df['Close'] - df['Close'].shift(10)
+        df['ROC'] = ((df['Close'] - df['Close'].shift(10)) / df['Close'].shift(10)) * 100
+        
+        # Fill NaN values
+        df = df.ffill().bfill()
         
         return df
     
@@ -61,9 +74,9 @@ except ImportError:
             signals['RSI'] = {'signal': 'HOLD', 'confidence': 0.5}
         
         # Moving Average Signal
-        if latest['Close'] > latest['SMA_20'] > latest['SMA_50']:
+        if latest['Close'] > latest['MA_20'] > latest['MA_50']:
             signals['MA'] = {'signal': 'BUY', 'confidence': 0.6}
-        elif latest['Close'] < latest['SMA_20'] < latest['SMA_50']:
+        elif latest['Close'] < latest['MA_20'] < latest['MA_50']:
             signals['MA'] = {'signal': 'SELL', 'confidence': 0.6}
         else:
             signals['MA'] = {'signal': 'HOLD', 'confidence': 0.4}
@@ -244,8 +257,8 @@ if st.sidebar.button("Analyze") or symbol:
                          line=dict(color="green", width=1, dash="dash"), row=2, col=1)
             
             # Moving Averages
-            fig.add_trace(go.Scatter(x=df['Date'], y=df['SMA_20'], name='SMA 20', line=dict(color='orange')), row=3, col=1)
-            fig.add_trace(go.Scatter(x=df['Date'], y=df['SMA_50'], name='SMA 50', line=dict(color='red')), row=3, col=1)
+            fig.add_trace(go.Scatter(x=df['Date'], y=df['MA_20'], name='SMA 20', line=dict(color='orange')), row=3, col=1)
+            fig.add_trace(go.Scatter(x=df['Date'], y=df['MA_50'], name='SMA 50', line=dict(color='red')), row=3, col=1)
             
             fig.update_layout(height=800, showlegend=True)
             st.plotly_chart(fig, use_container_width=True)
@@ -255,12 +268,12 @@ if st.sidebar.button("Analyze") or symbol:
             cols = st.columns(3)
             with cols[0]:
                 st.metric("RSI (14)", f"{float(latest['RSI_14']):.2f}")
-                st.metric("SMA 20", format_currency(float(latest['SMA_20']), currency_symbol))
+                st.metric("SMA 20", format_currency(float(latest['MA_20']), currency_symbol))
             with cols[1]:
                 st.metric("Bollinger Upper", format_currency(float(latest['BB_Upper']), currency_symbol))
                 st.metric("Bollinger Lower", format_currency(float(latest['BB_Lower']), currency_symbol))
             with cols[2]:
-                st.metric("SMA 50", format_currency(float(latest['SMA_50']), currency_symbol))
+                st.metric("SMA 50", format_currency(float(latest['MA_50']), currency_symbol))
                 vol = df['Close'].pct_change().std() * np.sqrt(252)
                 st.metric("Volatility (Annualized)", f"{float(vol):.2%}")
 
