@@ -71,19 +71,32 @@ def add_technical_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df['RSI_14'] = calculate_rsi(df['Close'].astype(float), window=14)
     
     # MACD (Moving Average Convergence Divergence)
-    df['MACD'], df['MACD_Signal'], df['MACD_Histogram'] = calculate_macd(df['Close'].astype(float))
+    macd_result = calculate_macd(df['Close'].astype(float))
+    df['MACD'] = macd_result[0]
+    df['MACD_Signal'] = macd_result[1]
+    df['MACD_Histogram'] = macd_result[2]
     
     # Bollinger Bands
-    df['BB_Upper'], df['BB_Middle'], df['BB_Lower'] = calculate_bollinger_bands(df['Close'].astype(float))
+    bb_result = calculate_bollinger_bands(df['Close'].astype(float))
+    df['BB_Upper'] = bb_result[0]
+    df['BB_Middle'] = bb_result[1]
+    df['BB_Lower'] = bb_result[2]
     df['BB_Width'] = (df['BB_Upper'] - df['BB_Lower']) / df['BB_Middle']
-    df['BB_Position'] = (df['Close'] - df['BB_Lower']) / (df['BB_Upper'] - df['BB_Lower'])
+    
+    # Calculate BB_Position safely
+    bb_range = df['BB_Upper'] - df['BB_Lower']
+    bb_range = bb_range.replace(0, np.nan)  # Avoid division by zero
+    df['BB_Position'] = (df['Close'] - df['BB_Lower']) / bb_range
+    df['BB_Position'] = df['BB_Position'].fillna(0.5)  # Fill NaN with neutral position
     
     # Stochastic Oscillator
-    df['Stoch_K'], df['Stoch_D'] = calculate_stochastic(
+    stoch_result = calculate_stochastic(
         df['High'].astype(float), 
         df['Low'].astype(float), 
         df['Close'].astype(float)
     )
+    df['Stoch_K'] = stoch_result[0]
+    df['Stoch_D'] = stoch_result[1]
     
     # Average True Range (ATR)
     df['ATR_14'] = calculate_atr(
@@ -107,6 +120,7 @@ def add_technical_indicators(df: pd.DataFrame) -> pd.DataFrame:
     # Volume indicators
     df['Volume_MA'] = df['Volume'].rolling(window=20).mean()
     df['Volume_Ratio'] = df['Volume'] / df['Volume_MA']
+    df['Volume_Ratio'] = df['Volume_Ratio'].fillna(1.0)  # Fill NaN with 1.0
     
     # Price momentum
     df['Momentum'] = df['Close'] - df['Close'].shift(10)
@@ -116,8 +130,10 @@ def add_technical_indicators(df: pd.DataFrame) -> pd.DataFrame:
     df['Support_Level'] = df['Low'].rolling(window=20).min()
     df['Resistance_Level'] = df['High'].rolling(window=20).max()
     
-    # Fill NaN values with backward fill
-    return df.bfill()
+    # Fill remaining NaN values with forward fill then backward fill
+    df = df.ffill().bfill()
+    
+    return df
 
 def calculate_rsi(prices: pd.Series, window: int = 14) -> pd.Series:
     """Calculate RSI (Relative Strength Index)."""
