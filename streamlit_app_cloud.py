@@ -36,17 +36,44 @@ except ImportError:
         gain = (delta.where(delta > 0, 0)).rolling(window=14).mean()
         loss = (-delta.where(delta < 0, 0)).rolling(window=14).mean()
         rs = gain / loss
-        df['RSI'] = 100 - (100 / (1 + rs))
+        df['RSI_14'] = 100 - (100 / (1 + rs))
+        df['RSI'] = df['RSI_14']  # Alias for compatibility
         
         # Simple moving averages
         df['MA_20'] = df['Close'].rolling(20).mean()
         df['MA_50'] = df['Close'].rolling(50).mean()
+        df['SMA_20'] = df['MA_20']  # Alias for compatibility
+        df['SMA_50'] = df['MA_50']  # Alias for compatibility
         
         # Bollinger Bands
         bb_middle = df['Close'].rolling(20).mean()
         bb_std = df['Close'].rolling(20).std()
         df['BB_Upper'] = bb_middle + (bb_std * 2)
         df['BB_Lower'] = bb_middle - (bb_std * 2)
+        df['BB_Middle'] = bb_middle
+        
+        # Add other technical indicators that might be expected
+        df['Volume_Ratio'] = 1.0
+        df['Volatility'] = df['Close'].pct_change().rolling(window=20).std()
+        df['ATR_14'] = (df['High'] - df['Low']).rolling(window=14).mean()
+        df['Williams_R'] = -50.0  # Neutral value
+        df['Momentum'] = df['Close'] - df['Close'].shift(10)
+        df['ROC'] = ((df['Close'] - df['Close'].shift(10)) / df['Close'].shift(10)) * 100
+        
+        # MACD calculation
+        ema_12 = df['Close'].ewm(span=12).mean()
+        ema_26 = df['Close'].ewm(span=26).mean()
+        df['MACD'] = ema_12 - ema_26
+        df['MACD_Signal'] = df['MACD'].ewm(span=9).mean()
+        
+        # Stochastic Oscillator
+        high_14 = df['High'].rolling(14).max()
+        low_14 = df['Low'].rolling(14).min()
+        df['Stoch_K'] = 100 * ((df['Close'] - low_14) / (high_14 - low_14))
+        df['Stoch_D'] = df['Stoch_K'].rolling(3).mean()
+        
+        # Fill NaN values
+        df = df.ffill().bfill()
         
         return df
 
@@ -54,14 +81,23 @@ except ImportError:
         signals = {}
         latest = df.iloc[-1]
         
-        # RSI Signal
-        rsi = latest['RSI']
+        # RSI Signal - handle both RSI and RSI_14 columns
+        rsi = latest.get('RSI_14', latest.get('RSI', 50))
         if rsi > 70:
             signals['RSI'] = {'signal': 'SELL', 'confidence': 0.7}
         elif rsi < 30:
             signals['RSI'] = {'signal': 'BUY', 'confidence': 0.7}
         else:
             signals['RSI'] = {'signal': 'HOLD', 'confidence': 0.5}
+        
+        # Moving Average Signal
+        if 'MA_20' in latest and 'MA_50' in latest:
+            if latest['Close'] > latest['MA_20'] > latest['MA_50']:
+                signals['MA'] = {'signal': 'BUY', 'confidence': 0.6}
+            elif latest['Close'] < latest['MA_20'] < latest['MA_50']:
+                signals['MA'] = {'signal': 'SELL', 'confidence': 0.6}
+            else:
+                signals['MA'] = {'signal': 'HOLD', 'confidence': 0.4}
         
         return signals
 
@@ -83,9 +119,18 @@ try:
 except ImportError:
     MACRO_AVAILABLE = False
 
-st.set_page_config(page_title="🚀 AI-Driven Stock Prediction System", layout="wide")
-st.title("🚀 AI-Driven Stock Prediction System")
-st.markdown("**🚀 Comprehensive analysis system with advanced ML models, technical analysis, and forecasting**")
+# Set page config
+st.set_page_config(page_title="Stock Predictor Cloud Dashboard", layout="wide")
+st.title("📈 Advanced Stock Predictor Dashboard (Cloud Optimized)")
+
+# Show system status
+with st.sidebar.expander("🔧 System Status", expanded=False):
+    st.write("**Module Availability:**")
+    st.write(f"• Data Ingestion: {'✅' if DATA_INGESTION_AVAILABLE else '❌ (Using fallback)'}")
+    st.write(f"• Feature Engineering: {'✅' if FEATURE_ENGINEERING_AVAILABLE else '❌ (Using fallback)'}")
+    st.write(f"• Future Forecasting: {'✅' if FUTURE_FORECASTING_AVAILABLE else '❌ (Using cloud model)'}")
+    st.write(f"• Enhanced Training: {'✅' if ENHANCED_TRAINING_AVAILABLE else '❌ (Demo mode)'}")
+    st.write(f"• Macro Analysis: {'✅' if MACRO_AVAILABLE else '❌ (Not available)'}")
 
 def is_indian_stock(symbol: str) -> bool:
     """Check if the stock symbol is for an Indian stock."""
@@ -745,7 +790,8 @@ if st.sidebar.button("🚀 Analyze Stock", type="primary") or symbol:
             fig.add_trace(go.Scatter(x=df['Date'], y=df['BB_Lower'], name='BB Lower', line=dict(color='red', dash='dash')), row=1, col=1)
             
             # RSI
-            fig.add_trace(go.Scatter(x=df['Date'], y=df['RSI'], name='RSI', line=dict(color='purple')), row=2, col=1)
+            rsi_column = 'RSI_14' if 'RSI_14' in df.columns else 'RSI'
+            fig.add_trace(go.Scatter(x=df['Date'], y=df[rsi_column], name='RSI', line=dict(color='purple')), row=2, col=1)
             # Add horizontal lines for RSI levels
             fig.add_shape(type="line", x0=df['Date'].iloc[0], y0=70, x1=df['Date'].iloc[-1], y1=70,
                          line=dict(color="red", width=1, dash="dash"), row=2, col=1)
@@ -763,7 +809,7 @@ if st.sidebar.button("🚀 Analyze Stock", type="primary") or symbol:
             st.subheader("📊 Latest Technical Indicators")
             cols = st.columns(3)
             with cols[0]:
-                st.metric("RSI", f"{float(latest['RSI']):.2f}")
+                st.metric("RSI", f"{float(latest[rsi_column]):.2f}")
                 st.metric("SMA 20", format_currency(float(latest['MA_20']), currency_symbol))
             with cols[1]:
                 st.metric("Bollinger Upper", format_currency(float(latest['BB_Upper']), currency_symbol))
@@ -869,15 +915,6 @@ if st.sidebar.button("🚀 Analyze Stock", type="primary") or symbol:
     except Exception as e:
         st.error(f"❌ Error: {str(e)}")
         st.error("Please check your internet connection and try again. If the error persists, try a different stock symbol.")
-
-# System status
-st.sidebar.markdown("---")
-st.sidebar.subheader("🔧 System Status")
-st.sidebar.write(f"📊 Data Ingestion: {'✅' if DATA_INGESTION_AVAILABLE else '⚠️ Fallback'}")
-st.sidebar.write(f"🔧 Feature Engineering: {'✅' if FEATURE_ENGINEERING_AVAILABLE else '⚠️ Basic'}")
-st.sidebar.write(f"🔮 Future Forecasting: {'✅' if FUTURE_FORECASTING_AVAILABLE else '⚠️ Advanced'}")
-st.sidebar.write(f"🤖 Enhanced Training: {'✅' if ENHANCED_TRAINING_AVAILABLE else '❌ N/A'}")
-st.sidebar.write(f"🌍 Macro Analysis: {'✅' if MACRO_AVAILABLE else '❌ N/A'}")
 
 # Footer
 st.markdown("---")
