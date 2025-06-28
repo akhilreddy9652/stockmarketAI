@@ -36,56 +36,35 @@ except ImportError:
         gain = (delta.where(delta > 0, 0)).rolling(window=14).mean()
         loss = (-delta.where(delta < 0, 0)).rolling(window=14).mean()
         rs = gain / loss
-        df['RSI_14'] = 100 - (100 / (1 + rs))
+        df['RSI'] = 100 - (100 / (1 + rs))
         
-        # Basic moving averages - use consistent names
-        df['MA_20'] = df['Close'].rolling(window=20).mean()
-        df['MA_50'] = df['Close'].rolling(window=50).mean()
-        df['SMA_20'] = df['MA_20']  # Alias for compatibility
-        df['SMA_50'] = df['MA_50']  # Alias for compatibility
+        # Simple moving averages
+        df['MA_20'] = df['Close'].rolling(20).mean()
+        df['MA_50'] = df['Close'].rolling(50).mean()
         
-        # Basic Bollinger Bands
-        df['BB_Middle'] = df['Close'].rolling(window=20).mean()
-        bb_std = df['Close'].rolling(window=20).std()
-        df['BB_Upper'] = df['BB_Middle'] + (bb_std * 2)
-        df['BB_Lower'] = df['BB_Middle'] - (bb_std * 2)
-        
-        # Add other missing columns with default values
-        df['Volume_Ratio'] = 1.0
-        df['Volatility'] = df['Close'].pct_change().rolling(window=20).std()
-        df['ATR_14'] = (df['High'] - df['Low']).rolling(window=14).mean()
-        df['Williams_R'] = -50.0  # Neutral value
-        df['Momentum'] = df['Close'] - df['Close'].shift(10)
-        df['ROC'] = ((df['Close'] - df['Close'].shift(10)) / df['Close'].shift(10)) * 100
-        
-        # Fill NaN values
-        df = df.ffill().bfill()
+        # Bollinger Bands
+        bb_middle = df['Close'].rolling(20).mean()
+        bb_std = df['Close'].rolling(20).std()
+        df['BB_Upper'] = bb_middle + (bb_std * 2)
+        df['BB_Lower'] = bb_middle - (bb_std * 2)
         
         return df
-    
+
     def get_trading_signals(df):
         signals = {}
         latest = df.iloc[-1]
         
         # RSI Signal
-        if latest['RSI_14'] > 70:
+        rsi = latest['RSI']
+        if rsi > 70:
             signals['RSI'] = {'signal': 'SELL', 'confidence': 0.7}
-        elif latest['RSI_14'] < 30:
+        elif rsi < 30:
             signals['RSI'] = {'signal': 'BUY', 'confidence': 0.7}
         else:
             signals['RSI'] = {'signal': 'HOLD', 'confidence': 0.5}
         
-        # Moving Average Signal
-        if latest['Close'] > latest['MA_20'] > latest['MA_50']:
-            signals['MA'] = {'signal': 'BUY', 'confidence': 0.6}
-        elif latest['Close'] < latest['MA_20'] < latest['MA_50']:
-            signals['MA'] = {'signal': 'SELL', 'confidence': 0.6}
-        else:
-            signals['MA'] = {'signal': 'HOLD', 'confidence': 0.4}
-        
         return signals
 
-# Try to import advanced features
 try:
     from future_forecasting import FutureForecaster
     FUTURE_FORECASTING_AVAILABLE = True
@@ -263,18 +242,18 @@ def ultra_realistic_ml_forecast(df, days=30):
         else:
             return (50 - current_stoch) / 5000
     
-         # Model 5: Volume-Price Trend Model
-     def volume_price_model():
-         volume_signal = (current_volume_ratio - 1.0) * 0.005
-         price_momentum = float(returns.iloc[-5:].mean())
-         return volume_signal + price_momentum * 0.5
-     
-     # Model 6: Volatility Breakout Model
-     def volatility_model():
-         if current_vol_regime > 1.5:  # High volatility
-             return float(returns.iloc[-3:].mean()) * 1.2  # Trend continuation
-         else:
-             return float(returns.iloc[-10:].mean()) * 0.8  # Mean reversion
+    # Model 5: Volume-Price Trend Model
+    def volume_price_model():
+        volume_signal = (current_volume_ratio - 1.0) * 0.005
+        price_momentum = float(returns.iloc[-5:].mean())
+        return volume_signal + price_momentum * 0.5
+    
+    # Model 6: Volatility Breakout Model
+    def volatility_model():
+        if current_vol_regime > 1.5:  # High volatility
+            return float(returns.iloc[-3:].mean()) * 1.2  # Trend continuation
+        else:
+            return float(returns.iloc[-10:].mean()) * 0.8  # Mean reversion
     
     # === REALISTIC MARKET DYNAMICS ===
     
@@ -766,7 +745,7 @@ if st.sidebar.button("🚀 Analyze Stock", type="primary") or symbol:
             fig.add_trace(go.Scatter(x=df['Date'], y=df['BB_Lower'], name='BB Lower', line=dict(color='red', dash='dash')), row=1, col=1)
             
             # RSI
-            fig.add_trace(go.Scatter(x=df['Date'], y=df['RSI_14'], name='RSI', line=dict(color='purple')), row=2, col=1)
+            fig.add_trace(go.Scatter(x=df['Date'], y=df['RSI'], name='RSI', line=dict(color='purple')), row=2, col=1)
             # Add horizontal lines for RSI levels
             fig.add_shape(type="line", x0=df['Date'].iloc[0], y0=70, x1=df['Date'].iloc[-1], y1=70,
                          line=dict(color="red", width=1, dash="dash"), row=2, col=1)
@@ -784,7 +763,7 @@ if st.sidebar.button("🚀 Analyze Stock", type="primary") or symbol:
             st.subheader("📊 Latest Technical Indicators")
             cols = st.columns(3)
             with cols[0]:
-                st.metric("RSI (14)", f"{float(latest['RSI_14']):.2f}")
+                st.metric("RSI", f"{float(latest['RSI']):.2f}")
                 st.metric("SMA 20", format_currency(float(latest['MA_20']), currency_symbol))
             with cols[1]:
                 st.metric("Bollinger Upper", format_currency(float(latest['BB_Upper']), currency_symbol))
