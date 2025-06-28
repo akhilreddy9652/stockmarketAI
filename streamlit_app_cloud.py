@@ -251,7 +251,11 @@ def ultra_accurate_ml_forecast(df, days=30):
     vol_regime = vol_20 / vol_50
     
     # Trend direction
-    trend_strength = (df['Close'] - mas['MA_50']) / mas['MA_50']
+    if 'MA_50' in mas and mas['MA_50'] is not None:
+        trend_strength = (df['Close'] - mas['MA_50']) / mas['MA_50']
+        trend_strength = trend_strength.fillna(0)
+    else:
+        trend_strength = pd.Series(0, index=df.index)
     
     # Market phase detection
     market_phase = detect_market_phase(df, returns, vol_20)
@@ -261,7 +265,7 @@ def ultra_accurate_ml_forecast(df, days=30):
     # Prepare feature matrix
     features = prepare_feature_matrix(df, mas, emas, rsi_14, rsi_21, rsi_30, 
                                     macd_12_26, macd_signal, stoch_k, stoch_d,
-                                    williams_r, bb_20, bb_50, atr_14, atr_21,
+                                    williams_r, bb_20['upper'], bb_20['lower'], atr_14, atr_21,
                                     vol_5, vol_20, vol_50, volume_ratio, obv,
                                     vwap, momentum_10, roc_10, cci, mfi, adx,
                                     vol_regime, trend_strength, market_phase)
@@ -597,26 +601,50 @@ def prepare_feature_matrix(df, mas, emas, *args):
     
     # Add all moving averages
     for name, ma in mas.items():
-        features[name] = ma
+        if ma is not None and hasattr(ma, 'index'):
+            features[name] = pd.to_numeric(ma, errors='coerce')
     
     for name, ema in emas.items():
-        features[name] = ema
+        if ema is not None and hasattr(ema, 'index'):
+            features[name] = pd.to_numeric(ema, errors='coerce')
     
     # Add all other features
     feature_names = ['rsi_14', 'rsi_21', 'rsi_30', 'macd', 'macd_signal', 
                     'stoch_k', 'stoch_d', 'williams_r', 'bb_20_upper', 'bb_20_lower',
-                    'bb_50_upper', 'bb_50_lower', 'atr_14', 'atr_21', 'vol_5',
+                    'atr_14', 'atr_21', 'vol_5',
                     'vol_20', 'vol_50', 'volume_ratio', 'obv', 'vwap', 'momentum_10',
                     'roc_10', 'cci', 'mfi', 'adx', 'vol_regime', 'trend_strength', 'market_phase']
     
     for i, feature in enumerate(args):
-        if i < len(feature_names):
-            if hasattr(feature, 'index'):
-                features[feature_names[i]] = feature
-            else:
-                features[feature_names[i]] = feature
+        if i < len(feature_names) and feature is not None:
+            try:
+                if hasattr(feature, 'index'):
+                    # It's a pandas Series
+                    features[feature_names[i]] = pd.to_numeric(feature, errors='coerce')
+                elif isinstance(feature, (int, float)):
+                    # It's a scalar value
+                    features[feature_names[i]] = float(feature)
+                elif isinstance(feature, str):
+                    # It's a string (like market_phase)
+                    # Convert to numeric encoding
+                    if feature_names[i] == 'market_phase':
+                        phase_map = {'high_volatility': 4, 'bull_market': 3, 'bear_market': 1, 'sideways': 2}
+                        features[feature_names[i]] = phase_map.get(feature, 2)
+                    else:
+                        features[feature_names[i]] = 0
+                else:
+                    features[feature_names[i]] = 0
+            except:
+                features[feature_names[i]] = 0
     
-    return features.fillna(method='ffill').fillna(0)
+    # Fill NaN values and ensure all values are numeric
+    features = features.fillna(method='ffill').fillna(0)
+    
+    # Ensure all columns are numeric
+    for col in features.columns:
+        features[col] = pd.to_numeric(features[col], errors='coerce').fillna(0)
+    
+    return features
 
 def get_current_features(features):
     """Get current feature values"""
